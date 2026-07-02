@@ -6,7 +6,7 @@ from CARL.agents.SimpleConf import SimpleConf
 
 # Task parameters
 p_0 = 0.6
-p_1 = 0.4
+p_2 = 0.4
 reward = 1
 punishment = -1
 n_simulations = 500
@@ -28,7 +28,7 @@ def run_multi_agent_sim(alphaC, alphaD, beta):
         # Same parameters for all agents
         pars_agent = np.tile([alphaC / n_agents, alphaD / n_agents, beta], (n_agents, 1))
         agent = SimpleConf(pars_agent)
-        bandit = TwoArmedBandit(p_0, p_1, reward, punishment)
+        bandit = TwoArmedBandit(p_0, p_2, reward, punishment)
         Qtable = np.zeros((n_agents, 2))
         G = agent.connect_agents_full()
 
